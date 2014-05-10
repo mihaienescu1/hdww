@@ -22,7 +22,7 @@
     <!-- Full Page Image Header Area -->
     <div id="top" class="header">
         <div class="vert-text">
-            <h1>howdowework [.com]</h1>
+            <h1>howdowework [.com] -- Maintenance</h1>
             <h3>
                 <em>We</em> give feedback to companies,
                 <em>We</em> get better working conditions</h3>

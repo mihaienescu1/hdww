@@ -1,4 +1,7 @@
 <?php
+if ($_SERVER['REMOTE_ADDR'] != '93.135.77.133') {
+	die('Site is under maintenance / We will be back.');	
+}
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
