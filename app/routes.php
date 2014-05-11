@@ -13,4 +13,7 @@
 
 Route::get('/', "HomeController@index");
 
+Route::get('/signIn', "UserController@signIn");
+Route::get('/signUp', "UserController@signUp");
+
 Route::resource('/companies', "CompaniesController");

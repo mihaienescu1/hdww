@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER['REMOTE_ADDR'] != '93.135.77.133') {
+if ($_SERVER['REMOTE_ADDR'] != '217.189.226.8') {
 	die('Site is under maintenance / We will be back.');	
 }
 /**

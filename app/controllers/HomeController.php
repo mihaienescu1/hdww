@@ -6,7 +6,7 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		//return View::make('howdowework.index');
+		return View::make('hdww.index');
 	}
 
 }
