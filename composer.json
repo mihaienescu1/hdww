@@ -7,7 +7,8 @@
 		"laravel/framework": "4.1.*",
 		"thujohn/rss" : "dev-master", 
 		"fbf/laravel-blog": "dev-master",
-		"way/generators": "2.*"
+		"way/generators": "2.*",
+		"codesleeve/social": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

@@ -121,7 +121,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Thujohn\Rss\RssServiceProvider',
 		'Fbf\LaravelBlog\LaravelBlogServiceProvider',
-		'Way\Generators\GeneratorsServiceProvider'
+		'Way\Generators\GeneratorsServiceProvider',
+		'Codesleeve\Social\SocialServiceProvider'
 
 	),
 
@@ -188,7 +189,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-		'Rss' 			  => 'Thujohn\Rss\RssFacade',
+		'Rss'             => 'Thujohn\Rss\RssFacade',
+		'Social'          => 'Codesleeve\Social\Social',
 
 	),
 

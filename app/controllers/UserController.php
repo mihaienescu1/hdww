@@ -13,4 +13,14 @@ class UserController extends BaseController {
 	{
 		return View::make('hdww.register');
 	}
+	
+	public function profile()
+	{
+		//return View::make('hdww.profile');	
+	}
+	
+	public function signOut()
+	{
+			
+	}
 }

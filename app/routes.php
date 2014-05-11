@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', "HomeController@index");
+Route::get('/', "SiteController@index");
 
-Route::get('/signIn', "UserController@signIn");
-Route::get('/signUp', "UserController@signUp");
+Route::get('/user/signIn', "UserController@signIn");
+Route::get('/user/signUp', "UserController@signUp");
+Route::get('/user/profile', "UserController@profile");
+Route::get('/user/signOut', "UserController@signOut");
 
 Route::resource('/companies', "CompaniesController");
