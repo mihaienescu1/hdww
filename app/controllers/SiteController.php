@@ -9,7 +9,7 @@ class SiteController extends BaseController {
 		
 		$user = Social::facebook('/me');
 		if (Social::check('facebook')) {
-    		//var_dump($user = Social::facebook('user'));
+    		var_dump($user = Social::facebook('user'));
   		}
 		
 		return View::make('hdww.index');
