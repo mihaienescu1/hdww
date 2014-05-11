@@ -13,9 +13,17 @@
 
 Route::get('/', "SiteController@index");
 
-Route::get('/user/signIn', "UserController@signIn");
-Route::get('/user/signUp', "UserController@signUp");
-Route::get('/user/profile', "UserController@profile");
-Route::get('/user/signOut', "UserController@signOut");
+Route::get('/user/login', "UserController@login");
 
+Route::get('/user/register/{network?}', "UserController@register");
+Route::post('/user/register', "UserController@store");
+
+
+Route::get('/user/profile', "UserController@profile");
+Route::get('/user/logout', "UserController@logout");
+
+Route::get('/pullInfo/{network}', "UserController@pullInfo");
+
+Route::get('/about', "SiteController@about");
 Route::resource('/companies', "CompaniesController");
+

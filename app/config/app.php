@@ -122,9 +122,11 @@ return array(
 		'Thujohn\Rss\RssServiceProvider',
 		'Fbf\LaravelBlog\LaravelBlogServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Codesleeve\Social\SocialServiceProvider'
+		'Artdarek\OAuth\OAuthServiceProvider'
 
 	),
+
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -190,7 +192,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Rss'             => 'Thujohn\Rss\RssFacade',
-		'Social'          => 'Codesleeve\Social\Social',
+		'OAuth' 			=> 'Artdarek\OAuth\Facade\OAuth',
 
 	),
 

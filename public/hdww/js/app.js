@@ -88,12 +88,13 @@ var App = (function() {
 				if (isChecked) {
 					$button
 						.removeClass('btn-default')
+						.removeClass('btn-danger')
 						.addClass('btn-' + color + ' active');
 				}
 				else {
 					$button
 						.removeClass('btn-' + color + ' active')
-						.addClass('btn-default');
+						//.addClass('btn-default');
 				}
 			}
 	

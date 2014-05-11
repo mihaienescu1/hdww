@@ -5,13 +5,13 @@
     @include('hdww.partials.nav-header')
     <div class="row clearfix">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-		<form role="form">
+		{{ Form::open(array('url' => 'user/register', 'role' => 'form')) }}
 			<h2>Please Sign Up <small>It's free and always will be.</small></h2>
 			<hr class="colorgraph">
             <h5>Pull you account info from the following social networks: </h5>
             <div class="row omb_socialButtons">
                 <div class="col-md-4 col-xs-4 col-sm-2">
-                    <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+                    <a href="{{ action('UserController@pullInfo', array('facebook')) }}" class="btn btn-lg btn-block omb_btn-facebook">
                         <i class="fa fa-facebook visible-xs"></i>
                         <span class="hidden-xs">Facebook</span>
                     </a>
@@ -32,39 +32,41 @@
            <h5>Or, complete the following form:</h5>
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+					<div class="form-group @if ($errors->has('first_name')) has-error @endif">
+                 {{ Form::text('first_name', null, array('class' => 'form-control input-lg', 'placeholder' => 'First Name', 'tabindex' => '1' )); }}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+					<div class="form-group @if ($errors->has('last_name')) has-error @endif">
+                        {{ Form::text('last_name', null, array('class' => 'form-control input-lg', 'placeholder' => 'Last Name', 'tabindex' => '2' )); }}
 					</div>
 				</div>
 			</div>
-			<div class="form-group">
-				<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
+			<div class="form-group @if ($errors->has('nick_name')) has-error @endif">
+                {{ Form::text('nick_name', null, array('class' => 'form-control input-lg', 'placeholder' => 'Display Name', 'tabindex' => '3' )); }}
 			</div>
-			<div class="form-group">
-				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+			<div class="form-group @if ($errors->has('email')) has-error @endif">
+                {{ Form::text('email', null, array('class' => 'form-control input-lg', 'placeholder' => 'Email Address', 'tabindex' => '4' )); }}
 			</div>
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
+                
+					<div class="form-group @if ($errors->has('password')) has-error @endif">
 						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+                
+					<div class="form-group @if ($errors->has('password')) has-error @endif">
+						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg error" placeholder="Confirm Password" tabindex="6">
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-4 col-sm-3 col-md-3">
 					<span class="button-checkbox">
-						<button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>
-                        <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
+						<button type="button" class="btn @if ($errors->has('t_and_c')) btn-danger @else btn-default @endif" data-color="info" tabindex="7">I Agree</button>
+                        {{ Form::checkbox('t_and_c', 0, null, ['class'=>'hidden', 'id'=>'t_and_c']); }}
 					</span>
 				</div>
                 
@@ -76,16 +78,13 @@
           	
 			<div class="row">
 				<div class="col-md-4 col-xs-4 col-lg-4">
+                {{ Form::hidden('social_profile_id', null) }}
+                {{ Form::hidden('social_network_name', null) }}
                 <input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7">
               </div>
-                <!--
-				<div class="col-xs-12 col-md-6">
-                <a href="#" class="btn btn-success btn-block btn-lg">Sign In</a>
-              </div>
-              -->
 			</div>
            
-		</form>
+		{{ Form::close() }}
 	</div>
 </div>
 
