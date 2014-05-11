@@ -4,14 +4,20 @@
                 <section class="sidebar">
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
-                        <div class="pull-left image">
-                            <img src="{{ asset('howdowework/img/avatar3.png') }}" class="img-circle" alt="User Image" />
+                        {{ HTML::image('howdowework/img/logo-hdww.png', 'howdowework.com', array('width' => '100', 'height' => '120')) }}
+                        <!--
+                        <div class="pull-left logo">
+                            
                         </div>
                         <div class="pull-left info">
+                        
                             <p>Hello, Jane</p>
 
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                            
+                            
                         </div>
+                        -->
                     </div>
                     <!-- search form -->
                     <form action="#" method="get" class="sidebar-form">
