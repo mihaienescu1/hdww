@@ -122,7 +122,8 @@ return array(
 		'Thujohn\Rss\RssServiceProvider',
 		'Fbf\LaravelBlog\LaravelBlogServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Artdarek\OAuth\OAuthServiceProvider'
+		'Artdarek\OAuth\OAuthServiceProvider',
+		'Chumper\Datatable\DatatableServiceProvider',
 
 	),
 
@@ -193,6 +194,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Rss'             => 'Thujohn\Rss\RssFacade',
 		'OAuth' 			=> 'Artdarek\OAuth\Facade\OAuth',
+		'Datatable' 		=> 'Chumper\Datatable\Facades\DatatableFacade',
 
 	),
 

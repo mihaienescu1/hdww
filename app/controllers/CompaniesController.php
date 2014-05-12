@@ -7,10 +7,13 @@ class CompaniesController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+	 
+	protected $layout = 'hdww.index';
+	 
 	public function index()
 	{
 		//
-		return View::make('companies.index');
+		return View::make('hdww.companies');
 	}
 
 	/**
@@ -77,4 +80,10 @@ class CompaniesController extends \BaseController {
 		//
 	}
 
+	public function getDatatable()
+    {
+        return Datatable::collection(Company::all())
+        ->showColumns('id', 'company_name', 'company_description')
+        ->make();
+    }
 }

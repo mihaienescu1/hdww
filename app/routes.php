@@ -29,3 +29,4 @@ Route::get('/pullInfo/{network}/action/{action}', "UserController@pullInfo");
 
 Route::get('/about', "SiteController@about");
 Route::resource('/companies', "CompaniesController");
+Route::get('/api/companies', array('as'=>'api.companies', 'uses'=>'CompaniesController@getDatatable'));
