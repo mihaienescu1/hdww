@@ -8,25 +8,31 @@
 		{{ Form::open(array('url' => 'user/register', 'role' => 'form')) }}
 			<h4>Register <small>You can add feedback as a featured member.</small></h4>
 			<hr class="colorgraph">
-            <h5 class="text-center">Pull you account info from one of the following social networks :</h5>
+            <h5 class="text-center">
+                @if (Session::has('noAuthMessage'))
+                	{{ Session::get('noAuthMessage') }}
+                @else
+                	Pull you account info from one of the following social networks :
+                @endif
+            </h5>
             <br />
             <div class="row omb_socialButtons">
                 <div class="col-md-4 col-xs-4 col-sm-2">
-                    <a href="{{ action('UserController@pullInfo', array('facebook')) }}" class="btn btn-lg btn-block omb_btn-facebook">
-                        <i class="fa fa-facebook visible-xs"></i>
-                        <span class="hidden-xs">Facebook</span>
+                    <a href="{{ action('UserController@pullInfo', array('facebook', 'register')) }}" class="btn btn-lg btn-block omb_btn-facebook">
+                        <i class="fa fa-facebook visible-xs visible-sm"></i>
+                        <span class="hidden-xs hidden-sm">Facebook</span>
                     </a>
                 </div>
                 <div class="col-md-4 col-xs-4 col-sm-2">
                     <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
-                        <i class="fa fa-twitter visible-xs"></i>
-                        <span class="hidden-xs">Twitter</span>
+                        <i class="fa fa-twitter visible-xs visible-sm"></i>
+                        <span class="hidden-xs hidden-sm">Twitter</span>
                     </a>
                 </div>	
            	<div class="col-md-4 col-xs-4 col-sm-2">
 		        <a href="#" class="btn btn-lg btn-block omb_btn-google">
-			        <i class="fa fa-google-plus visible-xs"></i>
-			        <span class="hidden-xs">Google+</span>
+			        <i class="fa fa-google-plus visible-xs visible-sm"></i>
+			        <span class="hidden-xs hidden-sm">Google+</span>
 		        </a>
 	        	</div>	
            </div>
@@ -39,7 +45,7 @@
                   <div class="input-group">
                   	<span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
                      {{ Form::text('first_name', null, array(
-                                                          'class' => 'form-control input-lg',
+                                                          'class' => 'form-control',
                                                           'tabindex' => '1', 
                                                           'id' => 'first_name')
                       ); }}
@@ -52,7 +58,7 @@
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
                         {{ Form::text('last_name', null, array(
-                                                             'class' => 'form-control input-lg',
+                                                             'class' => 'form-control',
                                                              'tabindex' => '2',
                                                              'id' => 'last_name' )
                         ); }}
@@ -65,7 +71,7 @@
                <div class="input-group">
                <span class="input-group-addon"><i class="fa fa-user"></i></span>
                {{ Form::text('nick_name', null, array(
-                                                        'class' => 'form-control input-lg', 
+                                                      'class' => 'form-control', 
                                                       'tabindex' => '3',
                                                       'id' => 'nick_name' )
                ); }}
@@ -76,7 +82,7 @@
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                 {{ Form::text('email', null, array(
-                                                   'class' => 'form-control input-lg',
+                                                   'class' => 'form-control',
                                                    'tabindex' => '4',
                                                    'id' => 'email' )
                 ); }}
@@ -90,7 +96,7 @@
                     <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                     {{ Form::password('password', array(
-                                                       'class' => 'form-control input-lg',
+                                                       'class' => 'form-control',
                                                        'tabindex' => '5',
                                                        'id' => 'password' )
                     ); }}
@@ -104,7 +110,7 @@
                     <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                     {{ Form::password('password_confirm', array(
-                                                       'class' => 'form-control input-lg', 
+                                                       'class' => 'form-control', 
                                                        'tabindex' => '5',
                                                        'id' => 'password_confirm' )
                     ); }}
@@ -146,7 +152,7 @@
 				<div class="col-md-4 col-xs-4 col-lg-4">
                 {{ Form::hidden('social_profile_id', 0) }}
                 {{ Form::hidden('social_network_name', 0) }}
-                <input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" id="register" tabindex="7">
+                <input type="submit" value="Register" class="btn btn-primary btn-block" id="register" tabindex="7">
               </div>
 			</div>
 		{{ Form::close() }}

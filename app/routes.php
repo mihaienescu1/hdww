@@ -17,13 +17,15 @@ Route::get('/user/login', "UserController@login");
 Route::post('/user/login', "UserController@loginCheck");
 
 Route::get('/user/register/{network?}', "UserController@register");
+Route::get('/user/social-login', "UserController@socialLogin");
 Route::post('/user/register', "UserController@store");
+Route::post('/user/ratings', "UserController@ratings");
 
 
 Route::get('/user/profile', "UserController@profile");
 Route::get('/user/logout', "UserController@logout");
 
-Route::get('/pullInfo/{network}', "UserController@pullInfo");
+Route::get('/pullInfo/{network}/action/{action}', "UserController@pullInfo");
 
 Route::get('/about', "SiteController@about");
 Route::resource('/companies', "CompaniesController");

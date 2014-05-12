@@ -3,10 +3,52 @@
   border-top: 0;
   background: #c4e17f;
   border-radius: 5px;
-  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #FFFF00 12.5%, #FFFF00 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #FFFF00 12.5%, #FFFF00 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #FFFF00 12.5%, #FFFF00 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #FFFF00 12.5%, #FFFF00 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -webkit-linear-gradient(
+	  left, 
+	  #c4e17f, #c4e17f 12.5%, 
+	  #FFFF00 12.5%, #FFFF00 25%, 
+	  #fecf71 25%, #fecf71 37.5%, 
+	  #f0776c 37.5%, #f0776c 50%, 
+	  #db9dbe 50%, #db9dbe 62.5%, 
+	  #c49cde 62.5%, #c49cde 75%, 
+	  #669ae1 75%, #669ae1 87.5%, 
+	  #62c2e4 87.5%, #62c2e4
+ );
+ 
+  background-image: -moz-linear-gradient(
+	  left, 
+	  #c4e17f, #c4e17f 12.5%, 
+	  #FFFF00 12.5%, #FFFF00 25%, 
+	  #fecf71 25%, #fecf71 37.5%, 
+	  #f0776c 37.5%, #f0776c 50%, 
+	  #db9dbe 50%, #db9dbe 62.5%, 
+	  #c49cde 62.5%, #c49cde 75%, 
+	  #669ae1 75%, #669ae1 87.5%, 
+	  #62c2e4 87.5%, #62c2e4
+  );
+  
+  background-image: -o-linear-gradient(
+	  left, 
+	  #c4e17f, #c4e17f 12.5%, 
+	  #FFFF00 12.5%, #FFFF00 25%, 
+	  #fecf71 25%, #fecf71 37.5%, 
+	  #f0776c 37.5%, #f0776c 50%, 
+	  #db9dbe 50%, #db9dbe 62.5%, 
+	  #c49cde 62.5%, #c49cde 75%, 
+	  #669ae1 75%, #669ae1 87.5%, 
+	  #62c2e4 87.5%, #62c2e4
+  );
+  
+  background-image: linear-gradient(
+	  to right, #c4e17f, #c4e17f 12.5%, 
+	  #FFFF00 12.5%, #FFFF00 25%, 
+	  #fecf71 25%, #fecf71 37.5%, 
+	  #f0776c 37.5%, #f0776c 50%, 
+	  #db9dbe 50%, #db9dbe 62.5%, 
+	  #c49cde 62.5%, #c49cde 75%, 
+	  #669ae1 75%, #669ae1 87.5%, 
+	  #62c2e4 87.5%, #62c2e4
+  );
 }
 
 .tab-content {
@@ -91,8 +133,7 @@
 }
 
 .register-form input {
-	font-size: 15px;
-	height: 35px;	
+	font-size: 14px;
 }
 
 .password-message { display:none; }
@@ -111,4 +152,46 @@
 
 form .with-errors * {
 	color: #B22424;
+}
+
+.pic
+{
+     margin-top:50px; 
+     width:120px;
+     margin-left:50px;
+     margin-bottom:-60px;
+}
+
+.panel
+{
+    background-image:url("http://autoimagesize.com/wp-content/uploads/2014/01/rainbow-aurora-background-wallpaper-colour-images-rainbow-background.jpg"); 
+}
+
+.name
+{
+    position:absolute;
+    padding-left:200px;
+    font-size:30px;
+}
+
+.dropdown
+{
+    position:absolute;
+}
+
+.change
+{
+ position:relative; 
+ bottom:20px;
+ padding:1px;
+ color:white;
+ text-decoration:none;
+}
+
+
+.change:hover
+{
+ text-decoration:none;
+ background-color:black;
+ color:white;
 }

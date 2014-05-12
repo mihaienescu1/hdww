@@ -6,9 +6,26 @@ class UserController extends BaseController {
 	
 	public function login()
 	{
-		
 		return View::make('hdww.sign');
 	} 
+	
+	public function socialLogin()
+	{
+		$socialUserData = Session::get('socialUserData');
+		
+		if (!empty($socialUserData) && count($socialUserData)) {
+		
+			$socialUser = User::where('social_profile_id', '=', $socialUserData['social_profile_id'])->first();
+		
+			if (!empty($socialUser)) {
+				$login = Auth::login($socialUser);
+				return Redirect::action('SiteController@index');
+			} 
+		}	
+		
+		return Redirect::action('UserController@pullInfo', array('network' => 'facebook', 'action' => 'register'));
+		
+	}
 	
 	public function loginCheck()
 	{
@@ -17,6 +34,8 @@ class UserController extends BaseController {
 			'email' 	=> array('required'),
 			'password' => array('required')
 		);
+
+		$remember = !empty(Input::get('remember_me')) ? (bool) Input::get('remember_me') : false;
 		
 		$validation = Validator::make(Input::all(), $rules);
 		
@@ -24,13 +43,13 @@ class UserController extends BaseController {
 			return Redirect::action('UserController@login')->withInput()->withErrors($validation);
 		}
 		
-		$auth = Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')]);
+		$auth = Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')], $remember);
 		
 		if ($auth) {
 				return Redirect::action('SiteController@index');
 		} else {
 			return Redirect::action('UserController@login')
-					->with('incorrectPassword', true)
+					->with('noAuthMessage', 'Incorrect user or password')
 					->withInput();
 		}
 		
@@ -86,14 +105,20 @@ class UserController extends BaseController {
 	
 	public function logout()
 	{
-			
+		Auth::logout();
+		Session::reflash();
+		return Redirect::action('SiteController@index');
 	}
 	
-	public function pullInfo($network = false)
+	public function pullInfo($network = false, $action = 'register')
 	{
 		if (!$network) {
 			return false;	
 		}
+	
+		$redirectTo 		 = '/user/register';
+		$fbCallBack 		 = 'http://howdowework.com/pullInfo/facebook/action/' . $action;
+		
 		
 		$backFill = array(
 			'first_name', 
@@ -109,7 +134,7 @@ class UserController extends BaseController {
 			case 'facebook' :
 			
 				$code 	= Input::get('code');
-				$fb 	= OAuth::consumer('Facebook', 'http://howdowework.com/pullInfo/facebook');
+				$fb 	= OAuth::consumer('Facebook', $fbCallBack);
 				
 				if (!empty($code)) {
 					
@@ -136,8 +161,14 @@ class UserController extends BaseController {
 		if (empty($backFill['nickname'])) {
 			$backFill['nick_name'] = $backFill['first_name'] . ' ' . $backFill['last_name'];
 		}
-						
-		return Redirect::action('UserController@register')->withInput($backFill);
+		
+		if ($action == 'login') {
+			$redirectTo = '/user/social-login';	
+			Session::put('socialUserData', $backFill);
+		}
+		
+		return Redirect::to($redirectTo)->withInput($backFill);
 	}
+	
 	
 }

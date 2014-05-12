@@ -8,12 +8,17 @@
 
 <div class="container">
     <div class="omb_login">
-    	<h3 class="text-center">Login or <a href="{{ action('UserController@register'); }}">Register</a></h3>
-       <h4 class="text-center">Use one of the following social networks:</h4>
-       <br />
+       <div class="row">
+       		<h4 class="text-center">Login <small>or <a href="{{ action('UserController@register'); }}">Register</a></small></h4>
+           <div class="col-xs-4 col-sm-4 col-md-6 col-md-offset-3">
+       		<hr class="colorgraph">
+           <h5 class="text-center">You can use one of the following social networks :</h5>
+           <br />
+       		</div>
+       </div>
 		<div class="row omb_row-sm-offset-3 omb_socialButtons">
     	    <div class="col-xs-4 col-sm-2">
-		        <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+		        <a href="{{ action('UserController@pullInfo', array('facebook', 'login')) }}" class="btn btn-lg btn-block omb_btn-facebook">
 			        <i class="fa fa-facebook visible-xs"></i>
 			        <span class="hidden-xs">Facebook</span>
 		        </a>
@@ -64,10 +69,10 @@
 					</div>
                     <!--<span class="help-block">Password error</span>-->
 					<br />
-                  @if (Session::has('incorrectPassword'))
+                  @if (Session::has('noAuthMessage'))
                   <div class="row with-errors">
                   	<div class="col-xs-4 col-sm-4 col-md-6 col-md-offset-5">
-                        <p class="text-center">User account unknown or password wrong.</p>
+                        <p class="text-center">{{ Session::get('noAuthMessage') }}</p>
                       </div>
                   </div>
                   @endif  
@@ -94,7 +99,7 @@
 			<div class="col-xs-12 col-sm-3">
 				<label class="checkbox">
                 	Stay Authenticated
-                  {{ Form::checkbox('remember_me', 0, null, ['id'=>'remember_me']); }}
+                  {{ Form::checkbox('remember_me', 'remember_me', false, ['id'=>'remember_me']); }}
 				</label>
 			</div>
 			<div class="col-xs-12 col-sm-3">

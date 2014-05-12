@@ -25,8 +25,25 @@
     </li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
-	<li class="dropdown">
-    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, Guest <strong class="caret"></strong></a>
+@if (Auth::check())   
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, {{ Auth::user()->nick_name }} <strong class="caret"></strong></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="{{ action('UserController@profile') }}">Your Profile</a>
+            </li>
+            <li>
+                <a href="{{ action('UserController@ratings') }}">Your Ratings</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                  <a href="{{ action('UserController@logout') }}">Logout</a>
+            </li>
+        </ul>
+    </li>
+@else
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, Guest <strong class="caret"></strong></a>
         <ul class="dropdown-menu">
             <li>
                 <a href="{{ action('UserController@login') }}">Login</a>
@@ -34,11 +51,9 @@
             <li>
                 <a href="{{ action('UserController@register') }}">Register</a>
             </li>
-            <li>
-            	  <a href="#">Logout--</a>
-            </li>
         </ul>
-    </li>
+    </li>  
+@endif
 </ul>
 
 </nav>

@@ -8,7 +8,7 @@
         <ul class="dropdown-menu" role="menu">
           <li><a href="#companies">Companies</a></li>
           <li><a href="#salaries">Salaries</a></li>
-          <li><a href="#jobs">Jobs</a></li>
+          <li><a href="#jobs">Interviews</a></li>
           <li class="divider"></li>
           <li><a href="#all">All</a></li>
         </ul>

@@ -17,7 +17,6 @@
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			@section('content')
-            
            @show
 			<div class="row clearfix">
 				<div class="col-md-4 column">
