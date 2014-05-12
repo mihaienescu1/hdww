@@ -27,16 +27,34 @@ class UserController extends BaseController {
 	
 		$validation = Validator::make(Input::all(), $rules);
 	
-		if ($validation->fails())
-		{
-			//Validation has failed.
-			return Redirect::action('UserController@register')->withInput()->withErrors($validation);
+		if ($validation->passes()) {
+			
+			$nickName = Input::get('nick_name', false);
+			
+			if (!$nickName) {
+				$nickName = Input::get('first_name') . ' ' . Input::get('last_name');	
+			}
+			
+			$user = new User();
+			$user->first_name = Input::get('first_name');
+			$user->last_name = Input::get('last_name');
+			$user->nick_name = $nickName;
+			$user->email = Input::get('email');
+			$user->password = Hash::make(Input::get('password'));
+			$user->social_network_name = Input::get('social_network_name');
+			$user->social_profile_id = Input::get('social_profile_id');
+			$user->save();
+			
+			return Redirect::action('UserController@profile');
+			
+		} else {
+			return Redirect::action('UserController@register')->withInput()->withErrors($validation);	
 		}
 	}
 	
 	public function profile()
 	{
-		//return View::make('hdww.profile');	
+		return View::make('hdww.profile');	
 	}
 	
 	public function logout()

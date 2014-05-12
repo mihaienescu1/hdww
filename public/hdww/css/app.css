@@ -89,3 +89,8 @@
 		margin-top:10px;
  	}		
 }
+
+.register-form input {
+	font-size:15px;
+	height:35px;	
+}

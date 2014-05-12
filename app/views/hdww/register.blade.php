@@ -4,11 +4,12 @@
 	@parent
     @include('hdww.partials.nav-header')
     <div class="row clearfix">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 register-form">
 		{{ Form::open(array('url' => 'user/register', 'role' => 'form')) }}
-			<h2>Please Sign Up <small>It's free and always will be.</small></h2>
+			<h4>Please Sign Up <small>It's free and always will be.</small></h4>
 			<hr class="colorgraph">
-            <h5>Pull you account info from the following social networks: </h5>
+            <h5 class="text-center">Pull you account info from one of the following social networks :</h5>
+            <br />
             <div class="row omb_socialButtons">
                 <div class="col-md-4 col-xs-4 col-sm-2">
                     <a href="{{ action('UserController@pullInfo', array('facebook')) }}" class="btn btn-lg btn-block omb_btn-facebook">
@@ -29,36 +30,85 @@
 		        </a>
 	        	</div>	
            </div>
-           <h5>Or, complete the following form:</h5>
+           <h5 class="text-center">- OR -</h5>
+           <h5 class="text-center">Fill the form below :</h5>
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group @if ($errors->has('first_name')) has-error @endif">
-                 {{ Form::text('first_name', null, array('class' => 'form-control input-lg', 'placeholder' => 'First Name', 'tabindex' => '1' )); }}
+                  <label class="control-label" for="first_name">First Name:</label>
+                  <div class="input-group">
+                  	<span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
+                     {{ Form::text('first_name', null, array(
+                                                          'class' => 'form-control input-lg',
+                                                          'tabindex' => '1', 
+                                                          'id' => 'first_name')
+                      ); }}
+                  </div>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group @if ($errors->has('last_name')) has-error @endif">
-                        {{ Form::text('last_name', null, array('class' => 'form-control input-lg', 'placeholder' => 'Last Name', 'tabindex' => '2' )); }}
+                    	<label class="control-label" for="last_name">Last Name:</label>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
+                        {{ Form::text('last_name', null, array(
+                                                             'class' => 'form-control input-lg',
+                                                             'tabindex' => '2',
+                                                             'id' => 'last_name' )
+                        ); }}
+                        </div>
 					</div>
 				</div>
 			</div>
 			<div class="form-group @if ($errors->has('nick_name')) has-error @endif">
-                {{ Form::text('nick_name', null, array('class' => 'form-control input-lg', 'placeholder' => 'Display Name', 'tabindex' => '3' )); }}
+           	 <label class="control-label" for="nick_name">Nick Name:</label>
+               <div class="input-group">
+               <span class="input-group-addon"><i class="fa fa-user"></i></span>
+               {{ Form::text('nick_name', null, array(
+                                                        'class' => 'form-control input-lg', 
+                                                      'tabindex' => '3',
+                                                      'id' => 'nick_name' )
+               ); }}
+               </div>
 			</div>
 			<div class="form-group @if ($errors->has('email')) has-error @endif">
-                {{ Form::text('email', null, array('class' => 'form-control input-lg', 'placeholder' => 'Email Address', 'tabindex' => '4' )); }}
+            	 <label class="control-label" for="email">Email:</label>
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                {{ Form::text('email', null, array(
+                                                   'class' => 'form-control input-lg',
+                                                   'tabindex' => '4',
+                                                   'id' => 'email' )
+                ); }}
+                </div>
 			</div>
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
                 
 					<div class="form-group @if ($errors->has('password')) has-error @endif">
-						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+                  <label class="control-label" for="password">Password:</label>
+                    <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    {{ Form::text('password', null, array(
+                                                       'class' => 'form-control input-lg',
+                                                       'tabindex' => '5',
+                                                       'id' => 'password' )
+                    ); }}
+                    </div>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
                 
 					<div class="form-group @if ($errors->has('password')) has-error @endif">
-						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg error" placeholder="Confirm Password" tabindex="6">
+					<label class="control-label" for="password_confirm">Confirm:</label>
+                    <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    {{ Form::text('password_confirm', null, array(
+                                                       'class' => 'form-control input-lg', 
+                                                       'tabindex' => '5',
+                                                       'id' => 'password_confirm' )
+                    ); }}
+                    </div>
 					</div>
 				</div>
 			</div>
