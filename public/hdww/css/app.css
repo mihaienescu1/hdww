@@ -5,49 +5,46 @@
   border-radius: 5px;
   background-image: -webkit-linear-gradient(
 	  left, 
-	  #c4e17f, #c4e17f 12.5%, 
-	  #FFFF00 12.5%, #FFFF00 25%, 
-	  #fecf71 25%, #fecf71 37.5%, 
-	  #f0776c 37.5%, #f0776c 50%, 
-	  #db9dbe 50%, #db9dbe 62.5%, 
-	  #c49cde 62.5%, #c49cde 75%, 
-	  #669ae1 75%, #669ae1 87.5%, 
-	  #62c2e4 87.5%, #62c2e4
+	  #E38D13, #E38D13 12.5%, 
+	  #EC971D 12.5%, #EC971D 25%, 
+	  #F2B968 25%, #F2B968 37.5%, 
+	  #65B9EE 37.5%, #65B9EE 50%, 
+	  #428BCA 50%, #428BCA 62.5%, 
+	  #353535 75%, #353535 87.5%, 
+	  #080808 87.5%, #080808
  );
  
   background-image: -moz-linear-gradient(
 	  left, 
-	  #c4e17f, #c4e17f 12.5%, 
-	  #FFFF00 12.5%, #FFFF00 25%, 
-	  #fecf71 25%, #fecf71 37.5%, 
-	  #f0776c 37.5%, #f0776c 50%, 
-	  #db9dbe 50%, #db9dbe 62.5%, 
-	  #c49cde 62.5%, #c49cde 75%, 
-	  #669ae1 75%, #669ae1 87.5%, 
-	  #62c2e4 87.5%, #62c2e4
+	  #E38D13, #E38D13 12.5%, 
+	  #EC971D 12.5%, #EC971D 25%, 
+	  #F2B968 25%, #F2B968 37.5%, 
+	  #65B9EE 37.5%, #65B9EE 50%, 
+	  #428BCA 50%, #428BCA 62.5%, 
+	  #353535 75%, #353535 87.5%, 
+	  #080808 87.5%, #080808
   );
   
   background-image: -o-linear-gradient(
 	  left, 
-	  #c4e17f, #c4e17f 12.5%, 
-	  #FFFF00 12.5%, #FFFF00 25%, 
-	  #fecf71 25%, #fecf71 37.5%, 
-	  #f0776c 37.5%, #f0776c 50%, 
-	  #db9dbe 50%, #db9dbe 62.5%, 
-	  #c49cde 62.5%, #c49cde 75%, 
-	  #669ae1 75%, #669ae1 87.5%, 
-	  #62c2e4 87.5%, #62c2e4
+	  #E38D13, #E38D13 12.5%, 
+	  #EC971D 12.5%, #EC971D 25%, 
+	  #F2B968 25%, #F2B968 37.5%, 
+	  #65B9EE 37.5%, #65B9EE 50%, 
+	  #428BCA 50%, #428BCA 62.5%, 
+	  #353535 75%, #353535 87.5%, 
+	  #080808 87.5%, #080808
   );
   
   background-image: linear-gradient(
-	  to right, #c4e17f, #c4e17f 12.5%, 
-	  #FFFF00 12.5%, #FFFF00 25%, 
-	  #fecf71 25%, #fecf71 37.5%, 
-	  #f0776c 37.5%, #f0776c 50%, 
-	  #db9dbe 50%, #db9dbe 62.5%, 
-	  #c49cde 62.5%, #c49cde 75%, 
-	  #669ae1 75%, #669ae1 87.5%, 
-	  #62c2e4 87.5%, #62c2e4
+	  to right, 
+	  #E38D13, #E38D13 12.5%, 
+	  #EC971D 12.5%, #EC971D 25%, 
+	  #F2B968 25%, #F2B968 37.5%, 
+	  #65B9EE 37.5%, #65B9EE 50%, 
+	  #428BCA 50%, #428BCA 62.5%, 
+	  #353535 75%, #353535 87.5%, 
+	  #080808 87.5%, #080808
   );
 }
 
@@ -195,3 +192,20 @@ form .with-errors * {
  background-color:black;
  color:white;
 }
+
+.profile-row {
+	width:100%;
+		
+}
+
+#add-rating-global-button {
+	font-size:20px;
+	vertical-align:middle;
+}
+
+.add-text,
+.add-text:hover{
+	border:none;
+	background:none;
+	outline:none;
+}	

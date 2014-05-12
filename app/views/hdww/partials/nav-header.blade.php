@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
 <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
         <span class="sr-only">Toggle navigation</span>
@@ -31,9 +31,6 @@
         <ul class="dropdown-menu">
             <li>
                 <a href="{{ action('UserController@profile') }}">Your Profile</a>
-            </li>
-            <li>
-                <a href="{{ action('UserController@ratings') }}">Your Ratings</a>
             </li>
             <li class="divider"></li>
             <li>
