@@ -14,6 +14,7 @@
 Route::get('/', "SiteController@index");
 
 Route::get('/user/login', "UserController@login");
+Route::post('/user/login', "UserController@loginCheck");
 
 Route::get('/user/register/{network?}', "UserController@register");
 Route::post('/user/register', "UserController@store");
@@ -26,4 +27,3 @@ Route::get('/pullInfo/{network}', "UserController@pullInfo");
 
 Route::get('/about', "SiteController@about");
 Route::resource('/companies', "CompaniesController");
-

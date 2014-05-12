@@ -86,11 +86,29 @@
 @media (min-width: 768px) {
     .omb_login .omb_forgotPwd {
        text-align: right;
-		margin-top:10px;
+		margin-top: 10px;
  	}		
 }
 
 .register-form input {
-	font-size:15px;
-	height:35px;	
+	font-size: 15px;
+	height: 35px;	
+}
+
+.password-message { display:none; }
+
+.password-message.password-check-error p {
+	color: #B22424;
+}
+
+.password-message.password-check-match p {
+	color: #006B24;
+}
+
+.error-message p {
+	color: #B22424;
+}
+
+form .with-errors * {
+	color: #B22424;
 }

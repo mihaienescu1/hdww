@@ -6,8 +6,35 @@ class UserController extends BaseController {
 	
 	public function login()
 	{
+		
 		return View::make('hdww.sign');
 	} 
+	
+	public function loginCheck()
+	{
+		
+		$rules = array(
+			'email' 	=> array('required'),
+			'password' => array('required')
+		);
+		
+		$validation = Validator::make(Input::all(), $rules);
+		
+		if ($validation->fails()) {
+			return Redirect::action('UserController@login')->withInput()->withErrors($validation);
+		}
+		
+		$auth = Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')]);
+		
+		if ($auth) {
+				return Redirect::action('SiteController@index');
+		} else {
+			return Redirect::action('UserController@login')
+					->with('incorrectPassword', true)
+					->withInput();
+		}
+		
+	}
 	
 	public function register()
 	{
@@ -18,11 +45,11 @@ class UserController extends BaseController {
 	{
 		
 		$rules = array(
-			'first_name' => array('required'),
-			'last_name'  => array('required'),
-			'email'      => array('required', 'email', 'unique:users,email'),
-			'password'   => array('required', 'min:5'),
-			't_and_c'    => array('required')
+			'first_name' 				=> array('required'),
+			'last_name'  				=> array('required'),
+			'email'      				=> array('required', 'email', 'unique:users,email'),
+			'password'   				=> array('required', 'min:5'),
+			'terms_and_conditions'	=> array('required')
 		);
 	
 		$validation = Validator::make(Input::all(), $rules);

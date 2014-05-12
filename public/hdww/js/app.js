@@ -43,8 +43,30 @@ var App = (function() {
 		});	
 	}
 	
+	var _initPasswordCheckEvent = function() {
+		
+		$('.register-form #password_confirm').keyup(function() {
+			
+			var pass = $('.register-form #password');
+			
+			if ($(this).val() == pass.val()) {
+				$('.password-message').hide();
+				$('.password-check-match').show();
+				$(this).parents('.form-group').removeClass('has-error').addClass('.has-success');
+				$('.register-form #register').removeAttr('disabled');
+			} else {
+				$('.password-message').hide();
+				$('.password-check-error').show();	
+				$(this).parents('.form-group').addClass('has-error');
+				$('.register-form #register').attr('disabled', 'disabled');
+			}
+			
+		});
+		
+	};
+	
 	var _initMiscJsFixtures = function() {
-		$(".social-login-box").height( $(".login-box").height() - 160 );	
+		$(".social-login-box").height( $(".login-box").height() - 160);	
 		$(function () {
 		$('.button-checkbox').each(function () {
 	
@@ -127,6 +149,7 @@ var App = (function() {
 				_initMiscJsFixtures();
 				_initMainSearchConceptSearch();
 				_initDataToggleOnMainTabs();
+				_initPasswordCheckEvent();
 			}
 
 	}

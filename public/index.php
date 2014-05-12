@@ -3,7 +3,8 @@
 $allowed = array(
 	'217.189.226.8',
 	'79.112.68.219',
-	'77.4.114.178'
+	'77.4.114.178',
+	'77.4.111.35'
 );
 if (!in_array($_SERVER['REMOTE_ADDR'], $allowed)) {
 	die('Site is under maintenance / We will be back.');	
